@@ -1,13 +1,13 @@
 const express = require('express')
 
-const db = require('../db/regions')
+const db = require('../db/locations')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getRegions()
+  db.getLocations()
     .then((results) => {
-      res.json({ regions: results.map((region) => region) })
+      res.json({ locations: results.map((location) => location) })
       return null
     })
     .catch((err) => {
