@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useEffect }  from 'react'
+import { Routes, Route} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
+
+
+
+import Regions from './Regions'
+import Locations from './Locations'
 function App () {
   return (
     <>
       <header className="header">
-        <h1>My Collection</h1>
+        <h1>Accessible Auckland</h1>
       </header>
-      <section className="main">
-        {/* add your code here */}
-      </section>
+      <div className="main">
+        {/* <Regions /> */}
+        <Routes>
+          <Route path='/' element={<Regions/>} />
+          <Route path='region/:region_name' element={<Locations/>} />
+        </Routes>
+      </div>
     </>
   )
 }
