@@ -1,6 +1,6 @@
-import React, { useEffect }  from 'react'
+import React from 'react'
 import { Routes, Route} from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+//import { useDispatch, useSelector } from 'react-redux'
 
 
 
@@ -17,7 +17,7 @@ function App () {
         {/* <Regions /> */}
         <Routes>
           <Route path='/' element={<Regions/>} />
-          <Route path='region/:region_name' element={<Locations/>} />
+          <Route path='region/:region_name/:id' element={<Locations/>} />
         </Routes>
       </div>
     </>

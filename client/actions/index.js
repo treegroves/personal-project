@@ -1,4 +1,4 @@
-import request from 'superagent'
+//import request from 'superagent'
 import { getRegions } from '../apis/regions'
 import { getLocations } from '../apis/locations'
 
@@ -31,6 +31,7 @@ export function receiveLocations(locations) {
 export function fetchLocations() {
   return (dispatch) => {
     return getLocations().then((locations) => {
+      console.log('api', locations)
       dispatch(receiveLocations(locations))
       return null
     })

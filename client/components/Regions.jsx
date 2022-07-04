@@ -17,7 +17,7 @@ function Regions () {
         <ul>
           {regions?.map(region => (
             <li key={region.id}>
-              <Link to={`/region/${region.region_name}`}>{region.region_name} </Link>
+              <Link to={`/region/${region.region_name}/${region.id}`}>{region.region_name} </Link>
             </li>
           ))}
         </ul>
