@@ -7,3 +7,10 @@ export function getLocations() {
     return res.body.locations
   })
 }
+
+export function addLocation(location) {
+  return request
+    .post(`${rootUrl}/fruits`)
+    .send({ location })
+    .then((res) => res.body.location)
+}

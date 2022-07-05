@@ -1,13 +1,10 @@
 import React from 'react'
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 //import { useDispatch, useSelector } from 'react-redux'
-
-
-
 
 import Regions from './Regions'
 import Locations from './Locations'
-function App () {
+function App() {
   return (
     <>
       <header className="header">
@@ -16,8 +13,8 @@ function App () {
       <div className="main">
         {/* <Regions /> */}
         <Routes>
-          <Route path='/' element={<Regions/>} />
-          <Route path='region/:region_name/:id' element={<Locations/>} />
+          <Route path="/" element={<Regions />} />
+          <Route path="region/:region_name/:id" element={<Locations />} />
         </Routes>
       </div>
     </>
