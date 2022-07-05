@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Regions from './Regions'
 import Locations from './Locations'
+import AddLocationForm from './AddLocationForm'
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Regions />} />
           <Route path="region/:region_name/:id" element={<Locations />} />
+          <Route path="/addlocation" element={<AddLocationForm />} />
         </Routes>
       </div>
     </>
