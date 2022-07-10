@@ -33,7 +33,7 @@ export function receiveLocations(locations) {
 export function fetchLocations() {
   return (dispatch) => {
     return getLocations().then((locations) => {
-      console.log('api', locations)
+      //console.log('api', locations)
       dispatch(receiveLocations(locations))
       return null
     })
@@ -47,11 +47,12 @@ export function makeLocation(location) {
   }
 }
 
-export function createLocation() {
+export function createLocation(location) {
+  console.log('createLocation')
   return (dispatch) => {
-    return addLocation().then((location) => {
-      console.log('api', location)
-      dispatch(addLocation(location))
+    return addLocation(location).then((addedLocation) => {
+      console.log('api', addedLocation)
+      dispatch(makeLocation(addedLocation))
       return null
     })
   }

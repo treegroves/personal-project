@@ -16,7 +16,7 @@ function Regions() {
       <div className="regions-container row row-cols-2 ">
         {regions?.map((region) => (
           <div
-            className="col-6 col-md-4"
+            className="region-tile col-6 col-md-4"
             key={region.id}
             src={region.region_name}
           >

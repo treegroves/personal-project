@@ -9,11 +9,14 @@ body {
 
 
 .regions-container {
+  display: flex;
+  justify-content: space-around;
+  
   col{
     width: 200px;
     height: 200px;
   }
-  img{
-    
+  .region-tile{
+    padding: 0px;
   }
 }

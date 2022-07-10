@@ -22,6 +22,7 @@ function AddLocation() {
 
   function handleSubmit(evt) {
     evt.preventDefault()
+    console.log('handleSubmit')
     dispatch(createLocation(newLocation))
   }
 
