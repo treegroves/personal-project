@@ -1,14 +1,24 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+//import { useDispatch, useSelector } from 'react-redux'
 
-function App () {
+import Regions from './Regions'
+import Locations from './Locations'
+import AddLocationForm from './AddLocationForm'
+function App() {
   return (
     <>
       <header className="header">
-        <h1>My Collection</h1>
+        <h1>Accessible Auckland</h1>
       </header>
-      <section className="main">
-        {/* add your code here */}
-      </section>
+      <div className="main">
+        {/* <Regions /> */}
+        <Routes>
+          <Route path="/" element={<Regions />} />
+          <Route path="region/:region_name/:id" element={<Locations />} />
+          <Route path="/addlocation" element={<AddLocationForm />} />
+        </Routes>
+      </div>
     </>
   )
 }
