@@ -12,7 +12,7 @@ export function addLocation(location) {
   return request
     .post(`${rootUrl}/locations`)
     .send({ location })
-    .then((res) => res.body.location)
+    .then((res) => res.body)
 }
 
 // export function addLocation(location) {
