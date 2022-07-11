@@ -51,7 +51,7 @@ describe('GET /api/v1/locations/', () => {
       })
   })
 
-  it('should return status 500 and error message is server fails.', () => {
+  it('should return status 500 and error message if server fails.', () => {
     expect.assertions(2)
     getLocations.mockImplementation(() =>
       Promise.reject(new Error('Server Error'))
