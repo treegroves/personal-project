@@ -61,10 +61,6 @@ function addNewLocation(location) {
         regionId,
       }
     })
-    .catch((err) => {
-      console.error(err)
-      throw err
-    })
 }
 
 //update location
