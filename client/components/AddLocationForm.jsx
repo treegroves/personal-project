@@ -21,7 +21,7 @@ function AddLocation() {
   //where to list all fields
 
   function handleSubmit(evt) {
-    //evt.preventDefault()
+    evt.preventDefault()
     dispatch(createLocation(newLocation))
   }
 
