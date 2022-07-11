@@ -14,23 +14,3 @@ export function addLocation(location) {
     .send({ location })
     .then((res) => res.body)
 }
-
-// export function addLocation(location) {
-//   return Promise.resolve({
-//     name: 'ashfjhsdk',
-//     description: 'ashfjhsdk',
-//     address: 'ashfjhsdk',
-//     opening_hours: 'ashfjhsdk',
-//     website_url: '',
-//     wheelchair_compatible: '',
-//     ramps: '',
-//     elevator: '',
-//     accessible_toilets: '',
-//     region_id: '',
-//   })
-
-// return request
-//   .post(`${rootUrl}/fruits`)
-//   .send({ location })
-//   .then((res) => res.body.location)
-//}

@@ -17,34 +17,32 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  //console.log(req.body)
   const {
     name,
     description,
     address,
-    opening_hours,
-    website_url,
-    wheelchair_compatible,
+    openingHours,
+    websiteUrl,
+    wheelchairCompatible,
     ramps,
     elevator,
-    accessible_toilets,
-    region_id,
+    accessibleToilets,
+    regionId,
   } = req.body.location
   return db
     .addNewLocation({
       name,
       description,
       address,
-      opening_hours,
-      website_url,
-      wheelchair_compatible,
+      openingHours,
+      websiteUrl,
+      wheelchairCompatible,
       ramps,
       elevator,
-      accessible_toilets,
-      region_id,
+      accessibleToilets,
+      regionId,
     })
     .then((newLocation) => {
-      //console.log(newLocation)
       res.json(newLocation)
       return null
     })

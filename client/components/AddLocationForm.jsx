@@ -8,21 +8,20 @@ function AddLocation() {
     name: '',
     description: '',
     address: '',
-    opening_hours: '',
-    website_url: '',
-    wheelchair_compatible: '',
+    openingHours: '',
+    websiteUrl: '',
+    wheelchairCompatible: '',
     ramps: '',
     elevator: '',
-    accessible_toilets: '',
-    region_id: '',
+    accessibleToilets: '',
+    regionId: '',
   })
   const dispatch = useDispatch()
 
   //where to list all fields
 
-  function handleSubmit(evt) {
-    evt.preventDefault()
-    console.log('handleSubmit')
+  function handleSubmit() {
+    //evt.preventDefault()
     dispatch(createLocation(newLocation))
   }
 
@@ -32,7 +31,7 @@ function AddLocation() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-group input-group-sm mb-3">
+      <div className="input-group input-group-sm mb-4">
         <label
           className="input-group-text"
           id="inputGroup-sizing-sm"
@@ -47,6 +46,7 @@ function AddLocation() {
           onChange={handleChange}
         />
       </div>
+
       <div className="input-group input-group-sm mb-3">
         <label
           className="input-group-text"
@@ -78,6 +78,7 @@ function AddLocation() {
           onChange={handleChange}
         />
       </div>
+
       <div className="input-group input-group-sm mb-3">
         <label
           className="input-group-text"
@@ -89,22 +90,23 @@ function AddLocation() {
         <input
           type="text"
           name="openingHours"
-          value={newLocation.opening_hours}
+          value={newLocation.openingHours}
           onChange={handleChange}
         />
       </div>
+
       <div className="input-group input-group-sm mb-3">
         <label
           className="input-group-text"
           id="inputGroup-sizing-sm"
-          htmlFor="locationUrl"
+          htmlFor="websiteUrl"
         >
           website
         </label>
         <input
           type="text"
-          name="url"
-          value={newLocation.website_url}
+          name="websiteUrl"
+          value={newLocation.websiteUrl}
           onChange={handleChange}
         />
       </div>
@@ -112,14 +114,14 @@ function AddLocation() {
         <label
           className="input-group-text"
           id="inputGroup-sizing-sm"
-          htmlFor="locationWheelchair"
+          htmlFor="wheelchairCompatible"
         >
           wheelchair compatibility
         </label>
         <input
-          type="number"
-          name="wheelchair access"
-          value={newLocation.wheelchair_compatible}
+          type="text"
+          name="wheelchairCompatible"
+          value={newLocation.wheelchairCompatible}
           onChange={handleChange}
         />
       </div>
@@ -127,12 +129,12 @@ function AddLocation() {
         <label
           className="input-group-text"
           id="inputGroup-sizing-sm"
-          htmlFor="locationRamps"
+          htmlFor="ramps"
         >
           ramps
         </label>
         <input
-          type="number"
+          type="text"
           name="ramps"
           value={newLocation.ramps}
           onChange={handleChange}
@@ -147,7 +149,7 @@ function AddLocation() {
           elevator
         </label>
         <input
-          type="number"
+          type="text"
           name="elevator"
           value={newLocation.elevator}
           onChange={handleChange}
@@ -157,14 +159,14 @@ function AddLocation() {
         <label
           className="input-group-text"
           id="inputGroup-sizing-sm"
-          htmlFor="locationToilets"
+          htmlFor="accessibleToilets"
         >
           toilets
         </label>
         <input
-          type="number"
-          name="accessible toilets"
-          value={newLocation.accessible_toilets}
+          type="text"
+          name="accessibleToilets"
+          value={newLocation.accessibleToilets}
           onChange={handleChange}
         />
       </div>
@@ -177,9 +179,9 @@ function AddLocation() {
           region id
         </label>
         <input
-          type="number"
-          name="region id"
-          value={newLocation.region_id}
+          type="text"
+          name="regionId"
+          value={newLocation.regionId}
           onChange={handleChange}
         />
       </div>
