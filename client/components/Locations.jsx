@@ -15,7 +15,7 @@ function Locations() {
   const regionId = params.id
 
   const locationArr = locations.filter((location) => {
-    return location.region_id == regionId
+    return location.regionId == regionId
   })
   return (
     <>
@@ -26,7 +26,12 @@ function Locations() {
               {location.name}
               <p>{location.description}</p>
               <p>{location.address}</p>
-              <p>{location.opening_hours}</p>
+              <p>{location.openingHours}</p>
+              <p>{location.websiteUrl}</p>
+              <p>{location.wheelchairCompatible}</p>
+              <p>{location.ramps}</p>
+              <p>{location.elevator}</p>
+              <p>{location.accessibleToilets}</p>
             </li>
           ))}
         </ul>
