@@ -12,6 +12,10 @@ beforeEach(() => {
   return testDb.seed.run()
 })
 
+afterAll(() => {
+  return testDb.destroy()
+})
+
 describe('get location id from database', () => {
   it('get location id from database', () => {
     expect.assertions(2)

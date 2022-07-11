@@ -64,3 +64,5 @@ describe('GET /api/v1/locations/', () => {
       })
   })
 })
+
+//test post
