@@ -47,6 +47,12 @@ describe('locations reducer', () => {
     expect(outputState).toEqual(expectedState)
     expect(outputState).not.toBe(initialState)
   })
+  it('returns the default initial state for undefined state and no action.', () => {
+    const expectedState = []
+    const outputState = locationsReducer(undefined, {})
+
+    expect(outputState).toEqual(expectedState)
+  })
 })
 
 describe('locations reducer - make location', () => {
