@@ -44,7 +44,7 @@ describe('locations reducer', () => {
       ],
       action
     )
-    expect(newState[0]).toStrictEqual({
+    expect(newState[2]).toStrictEqual({
       name: 'adsd3',
       description: 'adsd3',
       address: 'adsd3',
