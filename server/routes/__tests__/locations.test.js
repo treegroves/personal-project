@@ -1,10 +1,10 @@
 const request = require('supertest')
 const server = require('../../server')
-const { getLocations } = require('../../db/locations')
+const { getLocations, addNewLocation } = require('../../db/locations')
 jest.mock('../../db/locations')
 
 beforeEach(() => {
-  jest.clearAllMocks()
+  jest.resetAllMocks()
 })
 afterAll(() => {
   jest.restoreAllMocks()
@@ -37,6 +37,22 @@ const getLocationsMockData = [
   },
 ]
 
+const newLocation = [
+  {
+    id: 2,
+    name: 'addtest',
+    description: 'addtest',
+    address: 'addtest',
+    openingHours: 'addtest',
+    websiteUrl: 'addtest',
+    wheelchairCompatible: 'addtest',
+    ramps: 'addtest',
+    elevator: 'addtest',
+    accessibleToilets: 'addtest',
+    regionId: 'addtest',
+  },
+]
+
 describe('GET /api/v1/locations/', () => {
   it('should return status 200 and 2 locations when database is successful.', () => {
     expect.assertions(2)
@@ -65,4 +81,28 @@ describe('GET /api/v1/locations/', () => {
   })
 })
 
-//test post
+describe('POST /api/v1/locations/', () => {
+  it('adds location to database', () => {
+    expect.assertions(1)
+    addNewLocation.mockImplementation(() => Promise.resolve(newLocation))
+    return request(server)
+      .post('/api/v1/locations/')
+      .send({ location: newLocation })
+      .then((res) => {
+        expect(res.status).toBe(200)
+      })
+  })
+
+  it('should return status 500', () => {
+    expect.assertions(1)
+    addNewLocation.mockImplementation(() =>
+      Promise.reject(new Error('Server Error'))
+    )
+    return request(server)
+      .post('/api/v1/locations/')
+      .send({ location: newLocation })
+      .then((res) => {
+        expect(res.status).toBe(500)
+      })
+  })
+})

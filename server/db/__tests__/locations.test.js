@@ -26,27 +26,27 @@ describe('get location id from database', () => {
   })
 })
 
-// describe('add new location to database', () => {
-//   it.todo('add new location to database', () => {
-//     expect.assertions(3)
-//     const mockTestLocation = {
-//       name: 'Auckland Museum',
-//       address: 'The Auckland Domain Parnell, Auckland New Zealand',
-//       openingHours: 'Mon - Sun 9am-5pm',
-//     }
-//     return addNewLocation(mockTestLocation, testDb)
-//       .then(() => {
-//         return testDb('locations').select()
-//       })
-//       .then((location) => {
-//         expect(location.name).toBe('Auckland Museum')
-//         expect(location.address).toBe(
-//           '"The Auckland Domain Parnell, Auckland New Zealand"'
-//         )
-//         expect(location.opening_hours).toBe('Mon - Sun 9am-5pm')
-//       })
-//   })
-// })
+describe('add new location to database', () => {
+  it('add new location to database', () => {
+    expect.assertions(3)
+    const mockTestLocation = {
+      name: 'Auckland Museum',
+      address: 'The Auckland Domain Parnell, Auckland New Zealand',
+      openingHours: 'Mon - Sun 9am-5pm',
+    }
+    return addNewLocation(mockTestLocation, testDb)
+      .then((newLocation) => {
+        return testDb('locations').select().where('id', newLocation.id).first()
+      })
+      .then((location) => {
+        expect(location.name).toBe('Auckland Museum')
+        expect(location.address).toBe(
+          'The Auckland Domain Parnell, Auckland New Zealand'
+        )
+        expect(location.opening_hours).toBe('Mon - Sun 9am-5pm')
+      })
+  })
+})
 
 // expect(locations[0].websiteUrl).toBe('https://www.aucklandmuseum.com/')
 // expect(locations[0].wheelchairCompatible).toBe(1)
