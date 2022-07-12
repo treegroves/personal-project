@@ -1,8 +1,8 @@
-const locationsReducer = require('../locations')
-const { makeLocation } = require('../../actions')
+import locationsReducer from '../locations'
+import { makeLocation } from '../../actions'
 
 describe('locations reducer', () => {
-  test.todo('add a new location', () => {
+  test('add a new location', () => {
     const action = makeLocation({
       name: 'adsd3',
       description: 'adsd3',
@@ -44,7 +44,7 @@ describe('locations reducer', () => {
       ],
       action
     )
-    expect(newState[2]).toBe({
+    expect(newState[0]).toStrictEqual({
       name: 'adsd3',
       description: 'adsd3',
       address: 'adsd3',
