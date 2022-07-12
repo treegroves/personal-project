@@ -1,6 +1,6 @@
-const knex = require('knex')
-const config = require('./knexfile').development
-const db = knex(config)
+// const knex = require('knex')
+// const config = require('./knexfile').development
+// const db = knex(config)
 const connection = require('./connection')
 
 function getLocations(db = connection) {
@@ -20,7 +20,7 @@ function getLocations(db = connection) {
 }
 
 //add location
-function addNewLocation(location) {
+function addNewLocation(location, db = connection) {
   const {
     name,
     description,
@@ -60,10 +60,6 @@ function addNewLocation(location) {
         accessibleToilets,
         regionId,
       }
-    })
-    .catch((err) => {
-      console.error(err)
-      throw err
     })
 }
 

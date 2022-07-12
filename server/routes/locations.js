@@ -46,8 +46,7 @@ router.post('/', (req, res) => {
       res.json(newLocation)
       return null
     })
-    .catch((err) => {
-      console.error(err)
+    .catch(() => {
       res.sendStatus(500)
     })
 })
